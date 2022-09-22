@@ -5,6 +5,7 @@ import Link from "next/link";
 function Navbar() {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleDropDown = () => {
     setShowDropDown(!showDropDown);
@@ -12,6 +13,10 @@ function Navbar() {
 
   const handleSearchBar = () => {
     setShowSearchBox(!showSearchBox);
+  };
+
+  const handleOpenMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
   };
 
   return (
@@ -26,7 +31,7 @@ function Navbar() {
 
             <Link href="/">
               <div className="flex items-center logo">
-                <h1 className="text-[2.40vw] font-bold text-green-500">
+                <h1 className="cursor-pointer text-[2.40vw] font-bold text-green-500">
                   Petal Patch
                 </h1>
               </div>
@@ -58,9 +63,11 @@ function Navbar() {
               </Link>
               {/* link end */}
               {/* link start */}
-              <div className="plantLINK cursor-pointer px-[1vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
-                <h1 className="font-semibold text-[1.10vw]">Contact us</h1>
-              </div>
+              <Link href="/contact">
+                <div className="plantLINK cursor-pointer px-[1vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
+                  <h1 className="font-semibold text-[1.10vw]">Contact us</h1>
+                </div>
+              </Link>
               {/* link end */}
               {/* link start */}
               <div
@@ -170,12 +177,13 @@ function Navbar() {
       <div className="flex items-center justify-around w-[100vw] h-[12vh]">
         {/* first */}
         <svg
+          onClick={handleOpenMobileMenu}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-8 h-8"
+          className="relative w-8 h-8"
         >
           <path
             strokeLinecap="round"
@@ -184,10 +192,45 @@ function Navbar() {
           />
         </svg>
 
+        {/* mobile menu */}
+        {mobileMenu ? (
+          <div className="z-50 bg-[#f5f5f5] flex flex-col space-y-[5vh] justify-start py-[5vh] items-center  top-[10%] absolute w-[100vw] h-[100vh] ">
+            <Link href="/">
+              <div className="bg-[#79a03f] cursor-pointer px-[10vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
+                <h1 className="text-white font-semibold text-[7vw]">Home</h1>
+              </div>
+            </Link>
+
+            <Link href="/shop">
+              <div className="bg-[#79a03f] cursor-pointer px-[10vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
+                <h1 className="text-white font-semibold text-[7vw]">Shop</h1>
+              </div>
+            </Link>
+            <Link href="/about">
+              <div className="bg-[#79a03f] cursor-pointer px-[10vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
+                <h1 className="text-white font-semibold text-[7vw]">
+                  About us
+                </h1>
+              </div>
+            </Link>
+            <Link href="/contact">
+              <div className="bg-[#79a03f] cursor-pointer px-[10vw] py-[1vh] rounded-full flex items-center space-x-[2px]">
+                <h1 className="text-white font-semibold text-[7vw]">
+                  Contact us
+                </h1>
+              </div>
+            </Link>
+          </div>
+        ) : null}
+
+        {/* mobile menu */}
+
         {/* second */}
         <Link href="/">
           <div className="flex items-center logo">
-            <h1 className="text-[8vw] font-bold text-green-500">Petal Patch</h1>
+            <h1 className="cursor-pointer text-[8vw] font-bold text-green-500">
+              Petal Patch
+            </h1>
           </div>
         </Link>
 
@@ -201,7 +244,7 @@ function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="svgHoov w-8 h-8"
+            className=" svgHoov w-8 h-8"
           >
             <path
               strokeLinecap="round"
@@ -209,6 +252,7 @@ function Navbar() {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
+
           {showSearchBox ? (
             <div className="z-40 flex  justify-between items-start w-[50vw] top-[140%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
               <div className="w-[30%] uppercase font-medium space-y-[1vh]  flex flex-col text-[1vw]">

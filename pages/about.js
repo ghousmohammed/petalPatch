@@ -9,17 +9,17 @@ function about() {
     <>
       <Navbar />
       <div className="py-[4vh] flex flex-col justify-center items-center w-[100vw] h-auto ">
-        <div className="mt-[20vh] flex lg:flex-row flex-col items-center lg:items-start justify-around  w-[80%]">
+        <div className="lg:mt-[20vh] flex lg:flex-row flex-col items-center lg:items-start justify-around  w-[80%]">
           <div className="w-[100%] lg:w-[40%]">
             <Image src={rr}></Image>
           </div>
 
           {/* text div start */}
           <div className="space-y-[4vh] lg:w-[50%]">
-            <h1 className="text-[5vw] lg:text-[2.50vw] font-semibold">
+            <h1 className="text-[6vw] lg:text-[2.50vw] font-semibold">
               <span className="font-normal">Meet</span> Renee, & Roger
             </h1>
-            <h2 className="italic text-[3vw] lg:text-[1.80vw]">
+            <h2 className="italic text-[4vw] lg:text-[1.80vw]">
               Renee was born and raised in New York, she came to Fort Myers 17
               years ago with a dream. The Petal Patch was that dream! She has
               almost 30 years of experience and specializes in large events and
@@ -44,10 +44,10 @@ function about() {
 
           {/* text div start */}
           <div className="space-y-[4vh] lg:w-[50%]">
-            <h1 className="text-[5vw] lg:text-[2.50vw] font-semibold">
+            <h1 className="text-[6vw] lg:text-[2.50vw] font-semibold">
               <span className="font-normal">Meet</span> Alicia,
             </h1>
-            <h2 className="italic text-[3vw] lg:text-[1.80vw]">
+            <h2 className="italic text-[4vw] lg:text-[1.80vw]">
               Alicia is a New Yorker also. She is a crucial part of our team and
               will be sure to always deliver your arrangements with a beautiful
               smile! We hit the jackpot the day she walked through our door!

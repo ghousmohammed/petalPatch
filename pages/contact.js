@@ -6,7 +6,7 @@ function contact() {
     <>
       <Navbar />
 
-      <div className="flex pt-[5vh] lg:pt-[20vh] justify-center items-center lg:items-start w-[100vw]  h-auto ">
+      <div className="flex lg:py-[1vh] py-[5vh] pt-[5vh] lg:pt-[20vh] justify-center items-center lg:items-start w-[100vw]  h-auto ">
         <div className="flex lg:flex-row flex-col-reverse items-center lg:items-start  w-[90%]  h-auto lg:py-[4vh]">
           <div className=" w-[100%] lg:w-[40%] h-auto">
             <h1 className="text-[10vw] lg:text-[7vw] FDS">The Petal Patch</h1>
