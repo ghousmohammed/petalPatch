@@ -79,7 +79,7 @@ function Info() {
               24/7 Support
             </h2>
             <p className="text-[#666] text-[3vw] lg:text-[1vw] text-center">
-              We're always here to help
+              We&apos;re always here to help
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ function Info() {
               Best in town
             </h2>
             <p className="text-[#666] text-[3vw] lg:text-[1vw] text-center">
-              We're the BEST
+              We&apos;re the BEST
             </p>
           </div>
         </div>

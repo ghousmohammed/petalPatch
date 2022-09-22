@@ -10,7 +10,9 @@ function shop() {
         <h3 className="text-[4vw] lg:text-[1.20vw] text-[#909090] font-medium">
           Shop &nbsp; / &nbsp; Moonstruck Mercury
         </h3>
-        <p className="text-[1vw] text-[#909090]">You're Listing 504 Items</p>
+        <p className="text-[1vw] text-[#909090]">
+          You&apos;re Listing 504 Items
+        </p>
       </div>
 
       {/* you might also like section start */}

@@ -39,19 +39,25 @@ function NavDropDown({ onc }) {
           <ul className="w-[30%] uppercase font-medium  space-y-[1vh]  flex flex-col text-[1vw]">
             <li className="font-bold text-[1.20vw]">Holidays</li>
             <hr className="border-[1px] border-gray-200" />
-            <li className="cursor-pointer hover:font-bold">Mother's Day</li>
-            <li className="cursor-pointer hover:font-bold">Valentine's Day</li>
             <li className="cursor-pointer hover:font-bold">
-              St. Patrick's Day
+              Mother&apos;s Day
+            </li>
+            <li className="cursor-pointer hover:font-bold">
+              Valentine&apos;s Day
+            </li>
+            <li className="cursor-pointer hover:font-bold">
+              St. Patrick&apos;s Day
             </li>
             <li className="cursor-pointer hover:font-bold">Easter</li>
             <li className="cursor-pointer hover:font-bold">
-              Grandparent's Day
+              Grandparent&apos;s Day
             </li>
 
             <li className="cursor-pointer hover:font-bold">Independence Day</li>
 
-            <li className="cursor-pointer hover:font-bold">Fatther's Day</li>
+            <li className="cursor-pointer hover:font-bold">
+              Fatther&apos;s Day
+            </li>
 
             <li className="cursor-pointer hover:font-bold">Memorial Day</li>
 
