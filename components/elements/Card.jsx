@@ -8,7 +8,7 @@ function Card() {
       <Link href="/product">
         <div className="flex justify-evenly cursor-pointer items-center  flex-col w-[80vw] lg:w-[20vw]  lg:h-[65vh] ">
           <div className="flex justify-center items-center bg-[#f7f7f7] w-[80vw] lg:w-[20vw] h-[55vh]">
-            <div className="transitionCustom hover:scale-110  w-[90%]">
+            <div className="transitionCustom hover:scale-110  w-[50%]">
               <Image src={roseglam}></Image>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { Navigation, Autoplay } from "swiper";
 function HeroSlider() {
   return (
     <>
-      <div className="hidden lg:flex w-[100vw] h-[5vh]"></div>
+      <div className="hidden lg:flex w-[100vw] h-[3vh]"></div>
       <div className="flex justify-center items-start backDEX w-[100vw] h-[80vh]">
         <div className="w-[100%] h-[85vh]">
           <Swiper

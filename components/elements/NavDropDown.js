@@ -5,7 +5,7 @@ function NavDropDown({ onc }) {
     <>
       <div
         onClick={onc}
-        className=" left-0 top-[100%]  absolute h-[83vh] w-[100vw]"
+        className=" left-0 top-[90%]  absolute h-[83vh] w-[100vw]"
       >
         <div className="navDEX flex  justify-between items-start w-[44vw] top-[13%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
           <ul className="w-[30%] uppercase font-medium space-y-[1vh]  flex flex-col text-[1vw]">

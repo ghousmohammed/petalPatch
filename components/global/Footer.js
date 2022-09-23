@@ -11,7 +11,7 @@ import { FaYelp } from "react-icons/fa";
 function Footer() {
   return (
     <>
-      <div className="bg-[#352923] text-white flex lg:flex-row lg:justify-around lg:items-center flex-col items-center justify-center w-[100vw] h-[80vh] lg:h-[60vh] ">
+      <div className="bg-[#352923] text-white flex lg:flex-row lg:justify-around lg:items-center flex-col items-center justify-center w-[100vw] h-[70vh] lg:h-[60vh] ">
         {/* first container start
          */}
 
@@ -64,11 +64,11 @@ function Footer() {
         {/* first container end */}
 
         {/* social container start */}
-        <div className="flex justify-evenly items-center  flex-col w-[30%]  h-full">
-          <h1 className="text-[5vw] lg:text-[2.40vw] font-bold text-gray-400">
+        <div className="flex justify-evenly items-center  flex-col lg:w-[30%] h-auto lg:py-0 py-[4vh]  lg:h-full">
+          <h1 className="text-[5vw] lg:py-0 py-[4vh] lg:text-[2.40vw] font-bold text-gray-400">
             Social Links
           </h1>
-          <div className="flex flex-col items-center justify-center space-y-[3vh]">
+          <div className="flex flex-row lg:flex-col items-center justify-center space-x-[3vh] lg:space-x-0 lg:space-y-[3vh]">
             <BsFacebook className="cursor-pointer hover:scale-125 transitionCustom text-[8vw] lg:text-[3vw] hover:text-blue-500" />
 
             <AiFillTwitterCircle className="cursor-pointer hover:scale-125 transitionCustom text-[8vw] lg:text-[3vw] hover:text-blue-400" />

@@ -5,6 +5,7 @@ import Link from "next/link";
 function Navbar() {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
+  const [showSearchBoxDesk, setShowSearchBoxDesk] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleDropDown = () => {
@@ -15,18 +16,22 @@ function Navbar() {
     setShowSearchBox(!showSearchBox);
   };
 
+  const handleSearchBarDesk = () => {
+    setShowSearchBoxDesk(!showSearchBoxDesk);
+  };
+
   const handleOpenMobileMenu = () => {
     setMobileMenu(!mobileMenu);
   };
 
   return (
     <>
-      <div className="z-50  fixed hidden lg:flex justify-start items-start px-[10vw] pt-[3vh] bg-[#79a03f] w-[100vw] h-[17vh]">
+      <div className="z-50  fixed hidden lg:flex justify-start items-start px-[10vw] pt-[3vh] bg-[#79a03f] w-[100vw] h-[15.4vh]">
         {/* main white navbar start */}
         {showDropDown ? <NavDropDown onc={handleDropDown} /> : null}
 
         <div className=" flex justify-center items-end left-0 absolute bottom-[-60%]  w-[100vw] h-[19vh]">
-          <div className="px-[4vw] flex items-center justify-between bg-white shadow-lg rounded-full w-[94vw] h-[19vh]">
+          <div className="px-[4vw] flex items-center justify-between bg-white shadow-lg rounded-full w-[94vw] h-[16vh]">
             {/* first div start */}
 
             <Link href="/">
@@ -116,13 +121,13 @@ function Navbar() {
               {/* icon start */}
               <div className=" relative cursor-pointer">
                 <svg
-                  onClick={handleSearchBar}
+                  onClick={handleSearchBarDesk}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="svgHoov w-6 h-6"
+                  className="svgHoov w-[4vw] h-[4vh]"
                 >
                   <path
                     strokeLinecap="round"
@@ -130,14 +135,14 @@ function Navbar() {
                     d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                   />
                 </svg>
-                {showSearchBox ? (
-                  <div className="navDEX flex  justify-between items-start w-[22vw] top-[140%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
+                {showSearchBoxDesk ? (
+                  <div className="z-50 flex  justify-between items-start w-[34vw] top-[140%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
                     <div className="w-[30%] uppercase font-medium space-y-[1vh]  flex flex-col text-[1vw]">
                       <form action="">
                         <input
                           type="text"
                           placeholder="Search"
-                          className="outline-none w-[18vw]"
+                          className="outline-none text-[1.20vw] w-[30vw]"
                         />
                       </form>
                     </div>
@@ -254,13 +259,13 @@ function Navbar() {
           </svg>
 
           {showSearchBox ? (
-            <div className="z-40 flex  justify-between items-start w-[50vw] top-[140%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
-              <div className="w-[30%] uppercase font-medium space-y-[1vh]  flex flex-col text-[1vw]">
+            <div className="z-40 flex  justify-between items-start w-[80vw] top-[140%] px-[2vw] py-[2vh] right-[10%] h-auto border-t-[3px] border-t-[#79a03f] shadow-md bg-white absolute">
+              <div className="w-[30%] uppercase font-medium space-y-[1vh]  flex flex-col text-[2vw]">
                 <form action="">
                   <input
                     type="text"
                     placeholder="Search"
-                    className="text-[3vw]  outline-none w-[45vw]"
+                    className="text-[4vw] outline-none w-[75vw]"
                   />
                 </form>
               </div>
