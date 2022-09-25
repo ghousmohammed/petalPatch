@@ -9,7 +9,6 @@ import { storefront } from "../utils/index";
 import { productsQuery } from "../utils/Graphql";
 
 function shop({ products }) {
-  console.log({ products });
   return (
     <>
       <Head>
