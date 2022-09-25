@@ -1,7 +1,7 @@
 // for fetching all of the products
 export const productsQuery = `
   query Products {
-    products(first: 100) {
+    products(first: 400) {
       edges {
         node {
           title
@@ -84,9 +84,10 @@ query SingleProduct ($handle: String!) {
 
 `;
 
+// for checkhout processing
 export const checkoutMutationQuery = `
-mutation CheckoutCreate($variantId: ID!) {
-  checkoutCreate(input: {lineItems: {variantId: $variantId, quantity: 1}}) {
+mutation CheckoutCreate($variantId: ID!, $productQuantity: Int!) {
+  checkoutCreate(input: {lineItems: {variantId: $variantId, quantity: $productQuantity}}) {
     checkout {
       webUrl
     }

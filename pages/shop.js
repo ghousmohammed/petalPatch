@@ -9,6 +9,7 @@ import { storefront } from "../utils/index";
 import { productsQuery } from "../utils/Graphql";
 
 function shop({ products }) {
+  console.log({ products });
   return (
     <>
       <Head>
@@ -22,10 +23,10 @@ function shop({ products }) {
       </Head>
       <Navbar />
       <div className="flex flex-col py-[2vh] justify-end items-center w-[100vw] h-auto lg:h-[30vh] bg-[#f5f5f5]">
-        <h3 className="text-[4vw] lg:text-[1.20vw] text-[#909090] font-medium">
-          Shop &nbsp; / &nbsp; All Category
+        <h3 className="text-[4vw] lg:text-[1.80vw] text-[#909090] font-medium">
+          Shop / All Category
         </h3>
-        <p className="text-[1vw] text-[#909090]">
+        <p className="text-[3vw] lg:text-[1.20vw] text-[#909090]">
           You&apos;re listing all products
         </p>
       </div>
@@ -41,7 +42,7 @@ function shop({ products }) {
 
         {/* cards grid start */}
 
-        <div className="px-[5vw] grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-center place-content-center items-center justify-center">
+        <div className="px-[5vw] py-[2vh] grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-center place-content-center items-center justify-center">
           {/* NOTE:: loop over products here */}
 
           {products.edges.map((item) => {

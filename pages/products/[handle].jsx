@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../../components/global/Navbar";
@@ -6,39 +6,57 @@ import Footer from "../../components/global/Footer";
 import Card from "../../components/elements/Card";
 
 //shopify
-
 import { storefront } from "../../utils/index";
 import { singleProductQuery, checkoutMutationQuery } from "../../utils/Graphql";
 
 function SingleProductPage({ product, products }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [productQuantity, setProductQuantity] = useState(1);
+  const [randomProduct, setRandomProduct] = useState();
   const image = product.images.edges[0].node;
   const variantId = product.variants.edges[0].node.id;
 
+  //you might also like
+  useEffect(() => {
+    setRandomProduct(Math.floor(Math.random() * 90 + 10));
+  }, []);
   const relatedProducts = products.edges
     .filter((item) => item.node.handle !== product.handle)
-    .slice(40, 44);
+    .slice(randomProduct, randomProduct + 4);
 
-  const checkout = async () => {
+  //checkout Function
+  async function checkout() {
     setIsLoading(true);
-    const { data } = await storefront(checkoutMutationQuery, { variantId })
-      .then((res) => {
-        console.warn(res);
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
-    console.log({ data });
-
+    const { data } = await storefront(checkoutMutationQuery, {
+      variantId,
+      productQuantity,
+    });
     const { webUrl } = data.checkoutCreate.checkout;
-    console.log(webUrl);
     window.location.href = webUrl;
+  }
+
+  //product Quantity Increase function
+  const handleProductQuantityIncrease = () => {
+    if (productQuantity >= 100) {
+      setProductQuantity(100);
+    } else {
+      setProductQuantity((productQuantity += 1));
+    }
+  };
+
+  //product Quantity Increase function
+  const handleProductQuantityDecrease = () => {
+    if (productQuantity <= 1) {
+      setProductQuantity(1);
+    } else {
+      setProductQuantity((productQuantity -= 1));
+    }
   };
 
   return (
     <>
       <Head>
-        <title>{product.title}</title>
+        <title>{product.title} - Petal Patch</title>
       </Head>
       <Navbar />
       <div className="flex py-[2vh] justify-center items-end w-[100vw] h-auto lg:h-[25vh] bg-[#f5f5f5]">
@@ -84,6 +102,7 @@ function SingleProductPage({ product, products }) {
 
             <div className="flex items-center justify-evenly w-[34vw] lg:w-[10vw] h-[6vh] border-[1px] border-[#e5e5e5]">
               <svg
+                onClick={handleProductQuantityDecrease}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -96,9 +115,10 @@ function SingleProductPage({ product, products }) {
                 />
               </svg>
               <p className="border-l-[1px] border-r-[1px] border-[#e5e5e5] py-[1vh] px-[4vh]">
-                1
+                {productQuantity}
               </p>
               <svg
+                onClick={handleProductQuantityIncrease}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
