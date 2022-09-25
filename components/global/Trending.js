@@ -15,7 +15,7 @@ function Trending({ productsFromShopify }) {
         {/* cards grid start */}
 
         <div className="px-[5vw] grid grid-cols-1 lg:grid-cols-4 gap-4 place-items-center place-content-center items-center justify-center">
-          {productsFromShopify.edges.slice(10, 22).map((item) => {
+          {productsFromShopify.edges.slice(20, 32).map((item) => {
             const product = item.node;
             const image = product.images.edges[0].node;
             return (

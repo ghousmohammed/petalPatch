@@ -1,7 +1,7 @@
 // for fetching all of the products
 export const productsQuery = `
   query Products {
-    products(first: 400) {
+    products(first: 100) {
       edges {
         node {
           title
